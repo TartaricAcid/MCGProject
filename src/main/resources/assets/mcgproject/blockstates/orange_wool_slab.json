@@ -1,0 +1,11 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "mcgproject:half_slab_orange_wool"
+  },
+  "variants": {
+    "inventory": [{}],
+    "half=bottom,variant=default": {"model": "mcgproject:half_slab_orange_wool"},
+    "half=top,variant=default": {"model": "mcgproject:upper_slab_orange_wool"}
+  }
+}

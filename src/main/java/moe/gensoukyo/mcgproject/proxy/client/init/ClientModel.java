@@ -38,6 +38,23 @@ public final class ClientModel {
         registerRender(ProjectBlocks.GREEN_WOOL_STAIRS);
         registerRender(ProjectBlocks.RED_WOOL_STAIRS);
         registerRender(ProjectBlocks.BLACK_WOOL_STAIRS);
+        registerRender(ProjectBlocks.WHITE_WOOL_SLAB);
+        registerRender(ProjectBlocks.WHITE_WOOL_SLAB);
+        registerRender(ProjectBlocks.ORANGE_WOOL_SLAB);
+        registerRender(ProjectBlocks.MAGENTA_WOOL_SLAB);
+        registerRender(ProjectBlocks.LIGHT_BLUE_WOOL_SLAB);
+        registerRender(ProjectBlocks.YELLOW_WOOL_SLAB);
+        registerRender(ProjectBlocks.LIME_WOOL_SLAB);
+        registerRender(ProjectBlocks.PINK_WOOL_SLAB);
+        registerRender(ProjectBlocks.GRAY_WOOL_SLAB);
+        registerRender(ProjectBlocks.SILVER_WOOL_SLAB);
+        registerRender(ProjectBlocks.CYAN_WOOL_SLAB);
+        registerRender(ProjectBlocks.PURPLE_WOOL_SLAB);
+        registerRender(ProjectBlocks.BLUE_WOOL_SLAB);
+        registerRender(ProjectBlocks.BROWN_WOOL_SLAB);
+        registerRender(ProjectBlocks.GREEN_WOOL_SLAB);
+        registerRender(ProjectBlocks.RED_WOOL_SLAB);
+        registerRender(ProjectBlocks.BLACK_WOOL_SLAB);
     }
 
     private static void registerRender(Block block) {

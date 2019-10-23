@@ -1,0 +1,9 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "green_wool"
+  },
+  "variants": {
+    "variant=default": {"model": "green_wool"}
+  }
+}
