@@ -43,3 +43,11 @@ processResources {
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
+
+jar {
+    if (System.getenv().BUILD_NUMBER != null) {
+        archiveName = "mcgproject-1.12.2-jenkins-build-${System.getenv().BUILD_NUMBER}.jar"
+    } else {
+        archiveName = "mcgproject-1.12.2-${mod_version}.jar"
+    }
+}
