@@ -8,9 +8,16 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.command.CommandBase;
+import net.minecraft.command.NumberInvalidException;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumDyeColor;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.world.World;
 
 import static moe.gensoukyo.mcgproject.proxy.init.ProjectItems.BUILDING;
 
@@ -20,7 +27,7 @@ import static moe.gensoukyo.mcgproject.proxy.init.ProjectItems.BUILDING;
  **/
 public abstract class BlockWoolSlab extends BlockSlab {
     private static final PropertyEnum<BlockWoolSlab.Variant> VARIANT = PropertyEnum.create("variant", BlockWoolSlab.Variant.class);
-    private EnumDyeColor color;
+    protected EnumDyeColor color;
 
     private BlockWoolSlab(EnumDyeColor color) {
         super(Material.CLOTH);
@@ -78,6 +85,16 @@ public abstract class BlockWoolSlab extends BlockSlab {
         public Double(EnumDyeColor color) {
             super(color);
             this.setRegistryName(String.format("%s_wool_double_slab", color.getName()));
+        }
+
+        @Override
+        public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+            try {
+                Item item = CommandBase.getItemByText(player, String.format("%s:%s_wool_slab", MCGProject.MOD_ID, color.getName()));
+                return new ItemStack(item);
+            } catch (NumberInvalidException ignore) {
+            }
+            return ItemStack.EMPTY;
         }
 
         @Override

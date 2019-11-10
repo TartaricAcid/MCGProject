@@ -6,8 +6,12 @@ import net.minecraft.block.BlockStairs;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.EnumDyeColor;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import static moe.gensoukyo.mcgproject.proxy.init.ProjectItems.BUILDING;
+import static net.minecraft.util.BlockRenderLayer.CUTOUT;
 
 /**
  * @author TartaricAcid
@@ -24,5 +28,11 @@ public class BlockWoolStairs extends BlockStairs {
         this.setTranslationKey(String.format("%s.%s_wool_stairs", MCGProject.MOD_ID, color.getName()));
         this.setCreativeTab(BUILDING);
         this.color = color;
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public BlockRenderLayer getRenderLayer() {
+        return CUTOUT;
     }
 }
